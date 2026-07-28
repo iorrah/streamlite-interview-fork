@@ -1,4 +1,4 @@
-import type { Show } from './api';
+import { isContinueWatchingItem, type Show } from './api';
 
 interface ContentRowProps {
     title: string;
@@ -21,6 +21,12 @@ export function ContentRow({ title, shows }: ContentRowProps) {
                         </div>
                         <h3>{show.title}</h3>
                         <p>{show.genre}</p>
+
+                        {isContinueWatchingItem(show) && (
+                            <div className="progress" role="progressbar" aria-valuenow={Math.round(show.progress * 100)} aria-valuemin={0} aria-valuemax={100}>
+                                <div className="progress__bar" style={{ width: `${show.progress * 100}%` }} />
+                            </div>
+                        )}
                     </li>
                 ))}
             </ul>

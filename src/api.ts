@@ -57,3 +57,7 @@ export function fetchContinueWatching(): Promise<ContinueWatchingItem[]> {
         setTimeout(() => resolve(items), 400);
     });
 }
+
+export function isContinueWatchingItem(show: Show): show is ContinueWatchingItem {
+    return 'progress' in show && typeof (show as ContinueWatchingItem).progress === 'number';
+}
