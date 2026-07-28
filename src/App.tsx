@@ -16,10 +16,10 @@ export function App() {
             <header>
                 <span className="logo">{brandName}</span>
                 <nav aria-label="Switch brand">
-                    <a href="/?brand=pplus" aria-current={brand === 'pplus' ? 'page' : undefined}>
+                    <a href={`${import.meta.env.BASE_URL}?brand=pplus`} aria-current={brand === 'pplus' ? 'page' : undefined}>
                         Paramount+
                     </a>
-                    <a href="/?brand=ptv" aria-current={brand === 'ptv' ? 'page' : undefined}>
+                    <a href={`${import.meta.env.BASE_URL}?brand=ptv`} aria-current={brand === 'ptv' ? 'page' : undefined}>
                         Pluto TV
                     </a>
                 </nav>
